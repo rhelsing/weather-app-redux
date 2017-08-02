@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-// import { bindActionCreators } from 'redux'
-// import { fetchWeather } from '../actions/index'
 
 class WeatherList extends Component {
 
@@ -15,7 +13,19 @@ class WeatherList extends Component {
     return (
       <tr key={cityData.city.id}>
         <td>{cityData.city.name}</td>
+        <td>{this.renderChartCol(ts)}</td>
+        <td>{this.renderChartCol(hs)}</td>
+        <td>{this.renderChartCol(ps)}</td>
       </tr>
+    )
+  }
+
+  renderChartCol(chartData){
+    console.log(chartData)
+    return (
+      <Sparklines height={120} width={180} data={chartData}>
+        <SparklinesLine color='red' />
+      </Sparklines>
     )
   }
 
