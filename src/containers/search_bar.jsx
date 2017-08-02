@@ -13,8 +13,8 @@ class SearchBar extends Component {
 
     //SEED VALUES
     // this.props.fetchWeather('New York')
-    // this.props.fetchWeather('Boston')
-    // this.props.fetchWeather('San Francisco')
+    this.props.fetchWeather('Boston')
+    this.props.fetchWeather('San Francisco')
     this.props.fetchWeather('Atlanta')
   }
 
