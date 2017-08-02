@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Chart from '../components/chart'
 
 class WeatherList extends Component {
 
@@ -13,19 +14,10 @@ class WeatherList extends Component {
     return (
       <tr key={cityData.city.id}>
         <td>{cityData.city.name}</td>
-        <td>{this.renderChartCol(ts)}</td>
-        <td>{this.renderChartCol(hs)}</td>
-        <td>{this.renderChartCol(ps)}</td>
+        <td><Chart data={ts} color="orange" /></td>
+        <td><Chart data={hs} color="red" /></td>
+        <td><Chart data={ps} color="blue" /></td>
       </tr>
-    )
-  }
-
-  renderChartCol(chartData){
-    console.log(chartData)
-    return (
-      <Sparklines height={120} width={180} data={chartData}>
-        <SparklinesLine color='red' />
-      </Sparklines>
     )
   }
 
