@@ -10,6 +10,12 @@ class SearchBar extends Component {
     this.state = {term: ''}
     this.onInputChange = this.onInputChange.bind(this) //either this or fat arrow
     this.onFormSubmit = this.onFormSubmit.bind(this) //dont need this?
+
+    //SEED VALUES
+    // this.props.fetchWeather('New York')
+    // this.props.fetchWeather('Boston')
+    // this.props.fetchWeather('San Francisco')
+    this.props.fetchWeather('Atlanta')
   }
 
   onInputChange(e){
